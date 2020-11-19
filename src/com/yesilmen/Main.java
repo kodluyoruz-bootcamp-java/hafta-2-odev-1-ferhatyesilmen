@@ -1,6 +1,8 @@
 package com.yesilmen;
 
 import com.yesilmen.abstracts.Phone;
+import com.yesilmen.brands.Apple;
+import com.yesilmen.brands.Samsung;
 import com.yesilmen.enums.BrandType;
 import com.yesilmen.exceptions.BrandNotFoundException;
 import com.yesilmen.interfaces.Keyboard;
@@ -15,7 +17,8 @@ public class Main {
         Keyboard keyKeyboard = new KeyKeyboard();
         Keyboard touchKeyboard = new TouchKeyboard();
 
-        Phone apple = PhoneService.create(BrandType.APPLE,keyKeyboard);
+        //Apple apple = new Apple(keyKeyboard);
+        Apple apple = (Apple) PhoneService.create(BrandType.APPLE, keyKeyboard);
 
         apple.setModel("iPhone 12 Pro");
         apple.setImeiNumber("11111111111111111111111");
@@ -25,8 +28,14 @@ public class Main {
 
         System.out.println(apple.toString());
 
+        apple.call("5011112233");
+        apple.sendSms("5011112233", "Merhaba.....");
+        apple.videoCall("5011112233");
+        apple.shareFile();
 
-        Phone samsung = PhoneService.create(BrandType.SAMSUNG,keyKeyboard);
+
+        //Samsung samsung = new Samsung(touchKeyboard);
+        Samsung samsung = (Samsung) PhoneService.create(BrandType.SAMSUNG, touchKeyboard);
 
         samsung.setModel("S7");
         samsung.setImeiNumber("22222222222222222");
@@ -35,6 +44,11 @@ public class Main {
         samsung.setVersionNumber("v7");
 
         System.out.println(samsung.toString());
+
+        samsung.call("5011112233");
+        samsung.sendSms("5011112233","Merhaba......");
+        samsung.listen();
+        samsung.share();
 
 
     }

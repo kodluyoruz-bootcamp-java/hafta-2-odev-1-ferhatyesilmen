@@ -50,11 +50,11 @@ public abstract class Phone {
 
 
     public void call(String number) {
-        System.out.printf("%s numarası arandı.", number);
+        System.out.printf("%s numarası arandı.\n", number);
     }
 
     public void sendSms(String number, String message) {
-        System.out.printf("%s numarasına sms (%s) gönderildi.", number, message);
+        System.out.printf("%s numarasına sms (%s) gönderildi.\n", number, message);
     }
 
     @Override

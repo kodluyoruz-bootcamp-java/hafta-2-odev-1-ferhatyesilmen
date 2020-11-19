@@ -16,12 +16,12 @@ public class Apple extends Phone implements VideoCall, ShareFile {
 
     @Override
     public void videoCall(String number) {
-        System.out.println("video calling...");
+        System.out.println("video calling...\n");
     }
 
     @Override
     public void shareFile() {
-        System.out.println("file sharing...");
+        System.out.println("file sharing...\n");
     }
 
     public void read() {
